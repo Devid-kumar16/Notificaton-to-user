@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Attendance File</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a; 
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+            background-color: #2a2a2a; 
+            border-radius: 10px;
+            padding: 30px;
+            width: 350px; 
+            border: 2px solid #b85c5c; 
+        }
+        h2 {
+            color: #b85c5c; /* Light maroon for the heading */
+            text-align: center;
+        }
+        .form-group label {
+            color: #f1f1f1; /* Light color for the label */
+        }
+        .btn-primary {
+            background-color: #b85c5c;
+            border-color: #b85c5c;
+            width: 100%; /* Make the button width 100% of the box */
+        }
+        .btn-primary:hover {
+            background-color: #9f4b4b;
+            border-color: #9f4b4b;
+        }
+        .form-control {
+            background-color: white; /* White background for input fields */
+            color: black; /* Black text for better contrast */
+            border: 1px solid #b85c5c; /* Light maroon border for input */
+        }
+        .form-control:focus {
+            border-color: #9f4b4b;
+            background-color: #f1f1f1; /* Light grey background on focus */
+        }
+        /* Styling for the file input */
+        .custom-file-input {
+            background-color: #007bff; /* Blue color for the button */
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        /* Adding space between the file input and the text displaying no file chosen */
+        .custom-file-label {
+            color: black; /* Set the "No file chosen" text color to black */
+        }
+
+        .btn-danger {
+            background-color: #b85c5c;
+            border-color: #b85c5c;
+            width: 100%; /* Make the button width 100% of the box */
+        }
+        .btn-danger:hover {
+            background-color: #9f4b4b;
+            border-color: #9f4b4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Upload Attendance File</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Choose Excel file:</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file" name="file" accept=".xls,.xlsx">
+                    <label class="custom-file-label" for="file">No file chosen</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+    </div>
+
+    <!-- JavaScript to update label text after file is chosen -->
+    <script>
+        // Update the label text when a file is selected
+        document.getElementById("file").addEventListener("change", function(event) {
+            var fileName = event.target.files[0].name;
+            var nextSibling = event.target.nextElementSibling;
+            nextSibling.innerText = fileName;
+        });
+    </script>
+</body>
+</html>
+
+
+
+

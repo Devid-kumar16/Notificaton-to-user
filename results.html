@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Students with Attendance Less than 60%</h2>
+        <div class="table-responsive">
+            {{ result_60|safe }}
+        </div>
+        
+        <h2 class="mt-5">Students with Attendance Between 60% and 75%</h2>
+        <div class="table-responsive">
+            {{ result_75|safe }}
+        </div>
+        
+        <a href="/index" class="btn btn-secondary mt-3">Upload Another File</a>
+        <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark grey background */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+            background-color: #2a2a2a; /* Slightly lighter dark grey for container */
+            border-radius: 10px;
+            padding: 30px;
+            width: 350px; /* Smaller width for the box */
+            border: 2px solid #b85c5c; /* Light maroon border */
+        }
+        h2 {
+            color: #b85c5c; /* Light maroon for the heading */
+            text-align: center;
+        }
+        .form-group label {
+            color: #f1f1f1; /* Light color for the label */
+        }
+        .btn-primary {
+            background-color: #b85c5c;
+            border-color: #b85c5c;
+            width: 100%; /* Make the button width 100% of the box */
+        }
+        .btn-primary:hover {
+            background-color: #9f4b4b;
+            border-color: #9f4b4b;
+        }
+        .form-control {
+            background-color: white; /* White background for input fields */
+            color: black; /* Black text for better contrast */
+            border: 1px solid #b85c5c; /* Light maroon border for input */
+        }
+        .form-control:focus {
+            border-color: #9f4b4b;
+            background-color: #f1f1f1; /* Light grey background on focus */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+

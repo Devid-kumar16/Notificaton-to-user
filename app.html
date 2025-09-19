@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Notifications</title>
+</head>
+<body>
+    <h1>Attendance Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Attendance</th>
+            <th>Status</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.attendance }}</td>
+            <td>{{ row.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/notify" method="POST">
+        <button type="submit">Send Notifications</button>
+    </form>
+</body>
+</html>
